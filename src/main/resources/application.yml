@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  context-path: /
+
+spring:
+  ai:
+    chat:
+      client:
+        enabled: true
+    openai:
+      api-key: sk-a7c7c104c8b74c09ae88f5edfbcfef61
+      model: gpt-4o
+      max-tokens: 1024
+    deepseek:
+      base-url: https://api.deepseek.com/v1
+      api-key: sk-a7c7c104c8b74c09ae88f5edfbcfef61
+      chat:
+        model: deepseek-chat
+        max-tokens: 1024
+        temperature: 0.8
