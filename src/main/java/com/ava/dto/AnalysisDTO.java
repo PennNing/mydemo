@@ -9,8 +9,9 @@ public class AnalysisDTO {
      * @param text 需要分析的原始文本内容
      */
     public record AnalysisRequest(
-            @NotBlank(message = "分析内容不能为空")
-            String text
+            String language,
+            String content,
+            Scene scene
     ) {}
 
     /**
