@@ -6,7 +6,6 @@ public class AnalysisDTO {
 
     /**
      * 分析请求体
-     * @param text 需要分析的原始文本内容
      */
     public record AnalysisRequest(
             String language,
