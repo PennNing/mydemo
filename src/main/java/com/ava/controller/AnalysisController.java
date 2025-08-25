@@ -47,9 +47,9 @@ public class AnalysisController {
         log.info("Received request to summarize text: {}", request.content());
         // 并行调用两个AI任务可以提高效率，但为了简单起见，这里我们串行调用
         // 在实际生产中，可以考虑使用 CompletableFuture 来并行化
-        String keyPoints = analysisService.generateKeyPoints(request.content());
+//        String keyPoints = analysisService.generateKeyPoints(request.content());
+        String keyPoints = analysisService.generateSummary(request);
         log.info("Generated key points: {}", keyPoints);
-
         return new AnalysisDTO.AnalysisResponse(keyPoints, "");
     }
 
@@ -61,7 +61,7 @@ public class AnalysisController {
     @PostMapping("/analyze")
     public AnalysisDTO.AnalysisResponse analyze(@Valid @RequestBody AnalysisDTO.AnalysisRequest request) {
         log.info("Received request to generate report: {}", request.content());
-        String report = analysisService.generateReport(request);
+        String report = analysisService.generateSummary(request);
         log.info("Generated report: {}", report);
         return new AnalysisDTO.AnalysisResponse("", report);
     }

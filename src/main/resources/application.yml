@@ -8,9 +8,12 @@ spring:
       client:
         enabled: true
     openai:
-      api-key: sk-a7c7c104c8b74c09ae88f5edfbcfef61
-      model: gpt-4o
-      max-tokens: 1024
+      base-url: https://ark.cn-beijing.volces.com/api/v3/bots
+      api-key: aedda09b-c6f9-48a2-8aab-ba6809f13e55
+      chat:
+        model: bot-20250801152231-64txx
+        max-tokens: 1024
+        temperature: 0.8
     deepseek:
       base-url: https://api.deepseek.com/v1
       api-key: sk-a7c7c104c8b74c09ae88f5edfbcfef61
@@ -18,3 +21,20 @@ spring:
         model: deepseek-chat
         max-tokens: 1024
         temperature: 0.8
+    dashscope:
+      base-url: https://api.dashscope.com/api/v1
+      api-key: sk-662a6e34e54f425fa4bff64e610408d2
+      chat:
+        model: chat-pro
+        max-tokens: 1024
+        temperature: 0.8
+  datasource:
+    url: jdbc:mysql://121.40.128.173:3306/otikdbdev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8 # 数据库url
+    username: otikdevuser
+    password: otikdev2025
+  data:
+    redis:
+      host: 121.40.128.173
+      port: 6379
+      database: 0
+      password: "0oO1iIlLq9g"

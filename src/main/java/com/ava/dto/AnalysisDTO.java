@@ -1,14 +1,23 @@
 package com.ava.dto;
 
-import jakarta.validation.constraints.NotBlank;
+
+import com.ava.dto.enums.Scene;
+
+import javax.validation.constraints.NotNull;
 
 public class AnalysisDTO {
 
     /**
      * 分析请求体
+     *
+     * @param language  语言
+     * @param content   内容
+     * @param scene     场景
      */
     public record AnalysisRequest(
+            @NotNull(message = "语言不能为空")
             String language,
+            @NotNull(message = "内容不能为空")
             String content,
             Scene scene
     ) {}
